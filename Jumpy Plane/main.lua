@@ -18,6 +18,9 @@ local background = LoadTexture("Background.png")
 local jumpSound = LoadSound("Jump.wav")
 local explodeSound = LoadSound("Explode.wav")
 
+local logoX = screenWidth - MeasureText("Physac", 30) - 10
+local logoY = 15
+
 local function drawMenu()
     DrawText("PRESS W TO BEGIN", screenWidth / 2 - 150, screenHeight / 2 - 75, 30, GREEN)
 end
@@ -50,6 +53,9 @@ while not WindowShouldClose() do
     BeginDrawing()
     ClearBackground(BLACK)
     DrawTextureRec(background, new("Rectangle", 0, 0, 600, 500), new("Vector2", 0, 0), WHITE)
+
+    DrawText("Physac", logoX, logoY, 30, WHITE)
+	DrawText("Powered by", logoX + 50, logoY - 7, 10, WHITE)
 
     if Began then
     
